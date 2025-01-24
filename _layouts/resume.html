@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include head.html %}
+</head>
+
+<body
+    class="bg-{{ site.style.background_color }} text-{{ site.style.text_color }} font-{{ site.style.font }}">
+
+    <div class="resume-container mx-auto max-w-4xl p-8">
+
+        <!-- Avatar -->
+        <div class="avatar flex justify-center">
+            {% if site.data.resume.avatar.enabled %}
+            {% if site.data.resume.avatar.src contains "http" %}
+            <img class="rounded-full w-32 h-32" src="{{ site.data.resume.avatar.src }}" alt="Avatar">
+            {% else %}
+            <img class="rounded-full w-32 h-32" src="{{ site.data.resume.avatar.src | relative_url }}" alt="Avatar">
+            {% endif %}
+            {% endif %}
+        </div>
+
+        <!-- Basic Info -->
+        <div class="basic-info text-center mt-8">
+            <h1 class="text-4xl font-bold">{{ site.data.resume.name }}</h1>
+            <h2 class="text-xl text-{{ site.style.secondary_color }}">{{ site.data.resume.title }}</h2>
+            <p class="mt-4">{{ site.data.resume.description | markdownify }}</p>
+        </div>
+
+        <!-- Social Links -->
+        <div
+            class="social-links flex justify-center space-x-4 mt-4 border-t border-{{ site.style.secondary_color }} pt-4">
+            {% if site.data.resume.email %}
+            <!-- Email Link (if set in resume.yaml) -->
+            <a href="mailto:{{ site.data.resume.email }}"
+                class="text-{{ site.style.primary_color }} hover:text-{{ site.style.secondary_color }}">
+                <i class="fas fa-envelope text-2xl"></i>
+            </a>
+            {% endif %}
+            {% for social in site.data.resume.social %}
+            <a href="{{ social.url }}"
+                class="text-{{ site.style.primary_color }} hover:text-{{ site.style.secondary_color }}">
+                <i class="{{ social.icon }} text-2xl"></i>
+            </a>
+            {% endfor %}
+        </div>
+
+        <!-- Sections -->
+        <div class="sections mt-8">
+            {% for i in site.data.resume.sections %}
+            {% for section in i %}
+            {% assign section_name = section[0] %}
+            {% assign section_data = section[1] %}
+
+            <div class="section mt-12">
+                <!-- Section Header -->
+                <div class="border-t-4 border-{{ site.style.primary_color }} pb-1"></div>
+                <h3 class="text-2xl font-bold mt-4 flex items-center space-x-2">
+                    <i class="{{ section_data.icon }} text-{{ site.style.primary_color }}"></i>
+                    <span>{{ section_name | capitalize }}</span>
+                </h3>
+                <div class="border-b border-{{ site.style.secondary_color }} mt-2"></div>
+
+                <!-- Section Content -->
+                <div class="content mt-4 space-y-4">
+                    {% for item in section_data.content %}
+                    <div class="item">
+                        <h4 class="text-lg font-semibold">
+                            {% if item.icon %}
+                            <i class="{{ item.icon }} text-{{ site.style.primary_color }} mt-2"></i>
+                            {% endif %}
+                            {{ item.title | capitalize_words }}
+                        </h4>
+                        <!-- Star Rating -->
+                        {% if item.rating %}
+                        <div class="stars flex mt-2 text-{{ site.style.text_color }}-500">
+                            {% assign ceil_stars = item.rating | ceil %}
+                            {% assign full_stars = item.rating | floor %}
+                            {% assign decimal_part = item.rating | minus: full_stars %}
+                            
+                            {% for i in (1..5) %}
+                                {% if i <= full_stars %}
+                                    <i class="fas fa-star"></i>
+                                {% elsif i == ceil_stars and decimal_part >= 0.5 %}
+                                    <i class="fas fa-star-half-stroke"></i>
+                                {% else %}
+                                    <i class="far fa-star"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <h5 class="text-sm text-{{ site.style.secondary_color }} mt-1">
+                            {{ item.subtitle | markdownify }}
+                            {% if item.date %}
+                            <span class="text-{{ site.style.secondary_color }} ml-1">• {{ item.date }}</span>
+                            {% endif %}
+                        </h5>
+                        {% if item.description %}
+                        <p class="mt-2">{{ item.description | markdownify }}</p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {% endfor %}
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <script>
+        document.querySelectorAll('a').forEach(function (link) {
+            link.classList.add('underline', 'hover:no-underline');
+        });
+    </script>
+</body>
+
+</html>
