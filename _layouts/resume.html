@@ -91,9 +91,9 @@
                         </div>
                         {% endif %}
                         <h5 class="text-sm text-{{ site.style.secondary_color }} mt-1">
-                            {{ item.subtitle | markdownify }}
+                            {{ item.subtitle }}
                             {% if item.date %}
-                            <span class="text-{{ site.style.secondary_color }} ml-1">• {{ item.date }}</span>
+                            <span class="text-{{ site.style.secondary_color }} ml-1"><i class="fa-regular fa-calendar"></i> {{ item.date }}</span>
                             {% endif %}
                         </h5>
                         {% if item.description %}
