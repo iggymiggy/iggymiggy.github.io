@@ -6,6 +6,7 @@ favicon: ""
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
+# Color reference: https://tailwindcss.com/docs/colors
 style:
   primary_color: blue-500
   secondary_color: gray-700
