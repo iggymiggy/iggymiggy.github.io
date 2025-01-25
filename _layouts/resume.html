@@ -16,7 +16,7 @@
             {% if site.data.resume.avatar.src contains "http" %}
             <img class="rounded-full w-32 h-32" src="{{ site.data.resume.avatar.src }}" alt="Avatar">
             {% else %}
-            <img class="rounded-full w-32 h-32" src="{{ site.data.resume.avatar.src | relative_url }}" alt="Avatar">
+            <img class="rounded-full w-32 h-32" src="{{ site.data.resume.avatar.src | absolute_url }}" alt="Avatar">
             {% endif %}
             {% endif %}
         </div>
