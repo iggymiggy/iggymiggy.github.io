@@ -7,7 +7,7 @@ description: |
 
 avatar:
   enabled: true
-  src: 'https://picsum.photos/200'
+  src: '/assets/avatar.png'
 
 email: 'johndoe@example.com'
 
