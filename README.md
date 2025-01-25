@@ -5,12 +5,10 @@ A customizable, easy-to-use Jekyll-based resume template designed to generate a 
 ## Features
 
 - **Customizable Sections**: Define sections such as "Experience", "Education", "Skills", etc.
-- **Markdown Support**: Write your content in markdown for flexibility and ease.
 - **Rating System**: Display skills or experiences with a 1-5 star rating, including half-stars.
 - **Social Links**: Include icons for social media and email.
 - **Dynamic Theme**: Set your theme colors directly through `_config.yaml`.
-- **Responsive Design**: The resume adapts to different screen sizes with Tailwind's responsive utilities.
-- **Avatar Support**: Upload your avatar image or link to an online image.
+- **Font Awesome Icons**: Use [Font Awesome](https://fontawesome.com) icons for your sections.
 
 ## Requirements
 
@@ -19,28 +17,31 @@ A customizable, easy-to-use Jekyll-based resume template designed to generate a 
 
 ## Installation
 
-1. **Clone the repository**:
+1. **Use the template or fork the repository**
+
+2. **Clone your copy**:
    ```bash
-   git clone https://github.com/Draugelis/jekyll-resume.git
+   git clone https://github.com/yourusername/jekyll-resume.git
    cd jekyll-resume
    ```
 
-2. **Install dependencies**:
+3. **Install dependencies**:
    ```bash
    bundle install
    ```
 
-3. **Configure your resume**:
+4. **Configure your resume**:
    - Open the `resume.yaml` file and fill in your details (name, title, social links, etc.).
    - Add or modify sections in the `sections` key to fit your needs.
    - Customize the `_config.yaml` for theme colors, fonts, and other settings.
 
-4. **Serve the site locally**:
+5. **Serve the site locally**:
    ```bash
    bundle exec jekyll serve
    ```
 
-5. Open your browser and go to `http://localhost:4000` to see your resume.
+6. Open your browser and go to `http://localhost:4000` to see your resume.
+
 
 ## Customizing the Resume
 
@@ -93,8 +94,22 @@ sections:
 
 ## Customizing the Theme
 
-To customize the theme colors and fonts, modify the `_config.yaml` file.
+To customize the theme colors and fonts, modify the `_config.yaml` file. This project uses [Tailwind CSS colors](https://tailwindcss.com/docs/colors) for defining theme colors.
 
-- **Primary Color**: Set `primary_color` to the color you want for headings, links, and icons.
-- **Secondary Color**: Set `secondary_color` to adjust borders and secondary elements.
+- **Primary Color**: Set `primary_color` to the color you want for headings, links, and icons (e.g., `blue-500`, `green-600`).
+- **Secondary Color**: Set `secondary_color` to adjust borders and secondary elements (e.g., `gray-400`, `yellow-500`).
+- **Background Color**: Set `background_color` to define the background color of the resume (e.g., `white`, `gray-100`).
+- **Text Color**: Set `text_color` to specify the default text color used across the resume (e.g., `black`, `slate-700`).
 - **Font**: Choose from a list of web-safe fonts to customize the overall look.
+
+### Example `_config.yaml`
+
+```yaml
+resume:
+  theme:
+    primary_color: blue-600
+    secondary_color: gray-400
+    background_color: white
+    text_color: slate-800
+    font: sans
+```
