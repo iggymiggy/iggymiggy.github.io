@@ -1,0 +1,91 @@
+name: 'John Doe'
+title: 'Full Stack Developer'
+description: |
+  Passionate developer with 5+ years of experience working with modern web technologies.
+  Adept at building scalable and efficient web applications. Strong background in both
+  frontend and backend development, with a focus on creating intuitive user experiences.
+
+avatar:
+  enabled: true
+  src: '/assets/avatar.png'
+
+email: 'johndoe@example.com'
+
+social:
+  - url: 'https://github.com/johndoe'
+    icon: 'fab fa-github'
+  - url: 'https://linkedin.com/in/johndoe'
+    icon: 'fab fa-linkedin'
+  - url: 'https://twitter.com/johndoe'
+    icon: 'fab fa-twitter'
+
+sections:
+  - education:
+      icon: 'fas fa-graduation-cap'
+      content:
+        - title: 'BSc in Computer Science'
+          subtitle: 'XYZ University'
+          description: 'Studied software engineering, algorithms, and data structures.'
+          date: '2015 - 2019'
+
+  - experience:
+      icon: 'fas fa-briefcase'
+      content:
+        - title: 'Full Stack Developer'
+          subtitle: 'ABC Corp'
+          description: |
+            Worked on both the frontend and backend of a major e-commerce platform.
+            Used React, Node.js, and MongoDB to develop scalable features and services.
+          date: '2020 - Present'
+        - title: 'Frontend Developer'
+          subtitle: 'Tech Solutions'
+          description: |
+            Designed and implemented responsive user interfaces using HTML, CSS, and JavaScript.
+            Worked closely with UX/UI teams to enhance user experience.
+          date: '2019 - 2020'
+
+  - skills:
+      icon: 'fas fa-cogs'
+      content:
+        - title: 'JavaScript'
+          rating: 5
+          description: 'Advanced knowledge of JavaScript, including ES6+ features.'
+          rating: 4
+        - title: 'React.js'
+          description: 'Experience building dynamic, single-page applications with React.'
+          rating: 3.5
+        - title: 'Node.js'
+          rating: 3
+          description: 'Backend development using Node.js and Express.'
+        - title: 'SQL & NoSQL'
+          rating: 4.5
+          description: 'Proficient in both SQL databases (MySQL, PostgreSQL) and NoSQL (MongoDB).'
+
+  - certifications:
+      icon: 'fas fa-certificate'
+      content:
+        - title: 'Certified Kubernetes Administrator'
+          description: 'Achieved certification in Kubernetes administration in 2021.'
+          date: '2021'
+        - title: 'AWS Certified Developer - Associate'
+          description: 'Certification in Amazon Web Services development tools.'
+          date: '2020'
+
+  - projects:
+      icon: 'fas fa-project-diagram'
+      content:
+        - title: 'Personal Portfolio Website'
+          description: 'Developed a personal website to showcase my projects and blog using Jekyll.'
+          date: '2022'
+        - title: 'Task Management App'
+          description: 'Built a task management web app with React, Node.js, and MongoDB.'
+          date: '2021'
+
+  - interests:
+      icon: 'fas fa-heart'
+      content:
+        - title: 'Open-Source Contribution'
+          description: 'Contributed to several open-source projects focused on web development.'
+        - title: 'Cycling'
+          description: 'Enjoy cycling in my free time, especially on weekends.'
+
