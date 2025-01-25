@@ -2,6 +2,8 @@
 
 A customizable, easy-to-use Jekyll-based resume template designed to generate a clean, modern resume with support for personal sections, links, ratings, and more. This template uses YAML for data management.
 
+![example](example.png)
+
 ## Features
 
 - **Customizable Sections**: Define sections such as "Experience", "Education", "Skills", etc.
