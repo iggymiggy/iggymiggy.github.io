@@ -5,8 +5,7 @@
     {% include head.html %}
 </head>
 
-<body
-    class="bg-{{ site.style.background_color }} text-{{ site.style.text_color }} font-{{ site.style.font }}">
+<body class="bg-{{ site.style.background_color }} text-{{ site.style.text_color }} font-{{ site.style.font }}">
 
     <div class="resume-container mx-auto max-w-4xl p-8">
 
@@ -29,8 +28,7 @@
         </div>
 
         <!-- Social Links -->
-        <div
-            class="social-links flex justify-center space-x-4 mt-4 border-t border-{{ site.style.secondary_color }} pt-4">
+        <div class="social-links flex justify-center space-x-4 mt-4 border-t border-{{ site.style.secondary_color }} pt-4">
             {% if site.data.resume.email %}
             <!-- Email Link (if set in resume.yaml) -->
             <a href="mailto:{{ site.data.resume.email }}"
@@ -63,15 +61,16 @@
                 <div class="border-b border-{{ site.style.secondary_color }} mt-2"></div>
 
                 <!-- Section Content -->
-                <div class="content mt-4 space-y-4">
+                <div class="content mt-4 space-y-8">
                     {% for item in section_data.content %}
-                    <div class="item">
+                    <div class="item bg-{{ site.style.primary_color }}-100 p-4 rounded-lg shadow-lg">
                         <h4 class="text-lg font-semibold">
                             {% if item.icon %}
                             <i class="{{ item.icon }} text-{{ site.style.primary_color }} mt-2"></i>
                             {% endif %}
                             {{ item.title | capitalize_words }}
                         </h4>
+
                         <!-- Star Rating -->
                         {% if item.rating %}
                         <div class="stars flex mt-2 text-{{ site.style.text_color }}-500">
@@ -90,12 +89,30 @@
                             {% endfor %}
                         </div>
                         {% endif %}
+
+                        <!-- Subtitle & Date -->
                         <h5 class="text-sm text-{{ site.style.secondary_color }} mt-1">
                             {{ item.subtitle }}
                             {% if item.date %}
                             <span class="text-{{ site.style.secondary_color }} ml-1"><i class="fa-regular fa-calendar"></i> {{ item.date }}</span>
                             {% endif %}
                         </h5>
+
+                        <!-- Role -->
+                        {% if item.role %}
+                        <h4 class="text-md font-semibold mt-1 text-{{ site.style.primary_color }}">Role: {{ item.role }}</h4>
+                        {% endif %}
+
+                        <!-- Technologies (Styled as tags) -->
+                        {% if item.technologies %}
+                        <p class="mt-2 text-base font-semibold">
+                            <span class="bg-{{ site.style.primary_color }} text-{{ site.style.background_color }} px-3 py-1 rounded-full inline-block text-xs mr-2">
+                                {{ item.technologies }}
+                            </span>
+                        </p>
+                        {% endif %}
+
+                        <!-- Description -->
                         {% if item.description %}
                         <p class="mt-2">{{ item.description | markdownify }}</p>
                         {% endif %}
