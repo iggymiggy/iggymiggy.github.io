@@ -1,7 +1,7 @@
 name: 'Iggymiggy'
 title: 'Senior Cloud & DevOps Engineer'
 description: |
-  Experienced in designing, automating, and optimizing cloud infrastructure and CI/CD pipelines. Skilled in AWS, Azure, Kubernetes, Terraform, and Docker, with a strong focus on scalability, security, and operational efficiency. Passionate about automation, reliability, and continuous improvement in cloud-native environments.
+  Experienced in designing, automating, and optimizing cloud infrastructure and CI/CD pipelines. Skilled in AWS, Azure, Kubernetes, Terraform, and Docker, with a strong focus on scalability, security, and operational efficiency. Passionate about continuous learning and driven by a commitment to quality, I apply thoughtful planning and strategic thinking to build resilient, high-performing systems. I thrive in environments that value curiosity, autonomy, and constant improvement.
 
 avatar:
   enabled: true
@@ -34,7 +34,7 @@ sections:
           role: 'DevOps Lead'
           technologies: 'Docker, Azure, CI/CD, Kubernetes'
           description: 'Led the containerization of applications using Docker and migrated infrastructure to Azure, enhancing scalability and maintainability. Designed and implemented CI/CD pipelines to streamline deployment processes, improving efficiency and reliability in software delivery.'
-          date: '1/2024-1/2025'
+          date: '1/2024-4/2025'
         - title: 'Accessibility analysis software'
           role: "Cloud Architect"
           technologies: "Azure, Pulumi, Kubernetes"
